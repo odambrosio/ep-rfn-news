@@ -1,4 +1,5 @@
 <jmix = 'http://www.jahia.org/jahia/mix/1.0'>
+<jnt = 'http://www.jahia.org/jahia/nt/1.0'>
 <mix = 'http://www.jcp.org/jcr/mix/1.0'>
 <rfnmix = 'http://www.rfnmix.jahia.ep.europa.eu'>
 <rfnnt = 'http://www.rfnnt.jahia.ep.europa.eu'>
@@ -17,4 +18,7 @@
 [rfnnt:epRfnAdministrativeTab] > rfnnt:epRfnContent, jmix:studioOnly, rfnmix:epRfnComponent
 
 [rfnnt:epRfnNewsSearchResults] > rfnnt:epRfnContent, jmix:studioOnly, rfnmix:epRfnComponent
+
+[rfnnt:epRfnNewsFolder] > jnt:folder, jmix:editorialContent, rfnmix:epRfnComponent
+ + * (rfnnt:epRfnNews)
 
