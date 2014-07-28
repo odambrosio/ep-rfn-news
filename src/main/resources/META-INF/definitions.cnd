@@ -1,0 +1,20 @@
+<jmix = 'http://www.jahia.org/jahia/mix/1.0'>
+<mix = 'http://www.jcp.org/jcr/mix/1.0'>
+<rfnmix = 'http://www.rfnmix.jahia.ep.europa.eu'>
+<rfnnt = 'http://www.rfnnt.jahia.ep.europa.eu'>
+
+[rfnnt:epRfnNews] > rfnnt:epRfnContent, jmix:categorized, jmix:editorialContent, mix:title, rfnmix:epRfnComponent
+ - lifeType (string, choicelist) mandatory internationalized < 'parliamentary', 'administrative', 'practical'
+ - publicationDate (date) = now() mandatory indexed=no
+ - expirationDate (date) mandatory indexed=no
+ - isVisibleForOfficials (boolean) = 'false' mandatory indexed=no
+ - isVisibleForMembers (boolean, choicelist) = 'false' mandatory indexed=no
+ - isHighlighted (boolean) = 'false' mandatory indexed=no
+ - introParagraph (string, richtext) internationalized
+ - multimediaTag (string) indexed=no
+ + * (jnt:fileI18nReference, rfnnt:epRfnMultimediaElement, rfnnt:epRfnTextImage)
+
+[rfnnt:epRfnAdministrativeTab] > rfnnt:epRfnContent, jmix:studioOnly, rfnmix:epRfnComponent
+
+[rfnnt:epRfnNewsSearchResults] > rfnnt:epRfnContent, jmix:studioOnly, rfnmix:epRfnComponent
+
