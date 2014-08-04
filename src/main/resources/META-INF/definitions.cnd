@@ -4,21 +4,16 @@
 <rfnmix = 'http://www.rfnmix.jahia.ep.europa.eu'>
 <rfnnt = 'http://www.rfnnt.jahia.ep.europa.eu'>
 
-[rfnnt:epRfnNews] > rfnnt:epRfnContent, jmix:categorized, jmix:editorialContent, mix:title, rfnmix:epRfnComponent
+[rfnnt:epRfnAdministrativeTab] > jnt:content, jmix:studioOnly, rfnmix:epRfnComponent
+
+[rfnnt:epRfnNews] > jnt:content, jmix:categorized, jmix:editorialContent, mix:title, rfnmix:epRfnComponent
  - lifeType (string, choicelist) mandatory internationalized < 'parliamentary', 'administrative', 'practical'
  - publicationDate (date) = now() mandatory indexed=no
  - expirationDate (date) mandatory indexed=no
  - isVisibleForOfficials (boolean) = 'false' mandatory indexed=no
- - isVisibleForMembers (boolean, choicelist) = 'false' mandatory indexed=no
+ - isVisibleForMembers (boolean) = 'false' mandatory indexed=no
  - isHighlighted (boolean) = 'false' mandatory indexed=no
  - introParagraph (string, richtext) internationalized
  - multimediaTag (string) indexed=no
- + * (jnt:fileI18nReference, rfnnt:epRfnMultimediaElement, rfnnt:epRfnTextImage)
-
-[rfnnt:epRfnAdministrativeTab] > rfnnt:epRfnContent, jmix:studioOnly, rfnmix:epRfnComponent
-
-[rfnnt:epRfnNewsSearchResults] > rfnnt:epRfnContent, jmix:studioOnly, rfnmix:epRfnComponent
-
-[rfnnt:epRfnNewsFolder] > jnt:folder, jmix:editorialContent, rfnmix:epRfnComponent
- + * (rfnnt:epRfnNews)
+ + * (jnt:fileI18nReference, rfnnt:epRfnMultimediaElement, rfnnt:epRfnTextImage, rfnnt:epRfnLink)
 

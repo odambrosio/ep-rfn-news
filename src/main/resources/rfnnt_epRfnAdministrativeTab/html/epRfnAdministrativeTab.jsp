@@ -17,12 +17,12 @@
 <ul class="nav nav-tabs">
   <li class="active">
     <a href="#members" data-toggle="tab">
-      Members
+      <fmt:message key="news.administrative.tab.members"/>
     </a>
   </li>
   <li>
     <a href="#officials" data-toggle="tab">
-      Officials
+      <fmt:message key="news.administrative.tab.officials"/>
     </a>
   </li>
 </ul>
