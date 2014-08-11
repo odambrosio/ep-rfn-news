@@ -110,7 +110,7 @@
         <extensions>true</extensions>
         <configuration>
           <instructions>
-            <Jahia-Depends>default,ep-rfn-content</Jahia-Depends>
+            <Jahia-Depends>default,ep-rfn-content,facets</Jahia-Depends>
           </instructions>
         </configuration>
       </plugin>

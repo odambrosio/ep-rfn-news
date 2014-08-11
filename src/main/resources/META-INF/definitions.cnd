@@ -6,8 +6,14 @@
 
 [rfnnt:epRfnAdministrativeTab] > jnt:content, jmix:studioOnly, rfnmix:epRfnComponent
 
-[rfnnt:epRfnNews] > jnt:content, jmix:categorized, jmix:editorialContent, mix:title, rfnmix:epRfnComponent
- - lifeType (string, choicelist) mandatory internationalized < 'parliamentary', 'administrative', 'practical'
+[rfnnt:epRfnNewsLastThreeFacet] > jnt:queryFacet, rfnmix:epRfnComponent, jmix:studioOnly
+ - newsType (weakreference, choicelist[nodes='/sites/systemsite/categories/news_type/;jnt:category']) mandatory
+
+[rfnnt:epRfnNewsHighlightedFacet] > jnt:queryFacet, rfnmix:epRfnComponent, jmix:studioOnly
+ - newsType (weakreference, choicelist[nodes='/sites/systemsite/categories/news_type/;jnt:category']) mandatory
+
+[rfnnt:epRfnNews] > jnt:content, jmix:editorialContent, mix:title, rfnmix:epRfnComponent
+ - lifeType (weakreference, choicelist[nodes='/sites/systemsite/categories/news_type/;jnt:category']) mandatory
  - publicationDate (date) = now() mandatory indexed=no
  - expirationDate (date) mandatory indexed=no
  - isVisibleForOfficials (boolean) = 'false' mandatory indexed=no
@@ -16,4 +22,5 @@
  - introParagraph (string, richtext) internationalized
  - multimediaTag (string) indexed=no
  + * (jnt:fileI18nReference, rfnnt:epRfnMultimediaElement, rfnnt:epRfnTextImage, rfnnt:epRfnLink)
+ - categories (weakreference, choicelist[nodes='/sites/systemsite/categories/news//*;jnt:category']) multiple
 

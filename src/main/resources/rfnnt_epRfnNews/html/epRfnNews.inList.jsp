@@ -13,16 +13,32 @@
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 
+<jcr:nodeProperty node="${currentNode}" name="jcr:title" var="newsTitle"/>
 <jcr:nodeProperty node="${currentNode}" name="categories" var="newsCategories"/>
 <jcr:nodeProperty node="${currentNode}" name="multimediaTag" var="newsMultimediaTag"/>
 <jcr:nodeProperty node="${currentNode}" name="publicationDate" var="newsPublicationDate"/>
 <jcr:nodeProperty node="${currentNode}" name="introParagraph" var="newsIntroParagraph"/>
 
-<div class="news-entry">
-  <div class="box">
+
+<div class="news-list-entry">
+  <div class="multimedia-element">
+<%-- TODO : Filtre qui récupère le tag multimedia et affiche l'élément --%>
+    <c:if test="${not empty newsMultimediaTag}">
+      ${newsMultimediaTag.string}
+  	</c:if>
+  </div>
+  <div class="news-list-description">
+    <h2>
+      <c:if test="${not empty newsTitle}">
+        <c:url var="newsDetailUrl" value="${currentNode.url}" />
+        <a title="${newsTitle.string}" href="${newsDetailUrl}">
+          ${newsTitle.string}
+        </a>
+      </c:if>
+    </h2>
     <div class="category">
       <c:if test="${not empty newsCategories}">
-        ${newsCategories[0].node.displayableName}
+		${newsCategories[0].node.displayableName}
       </c:if>
     </div>
     <div class="date">
@@ -30,16 +46,8 @@
       	<fmt:formatDate pattern="dd.MM.yyyy" value="${newsPublicationDate.date.time}"/>
       </c:if>
     </div>
-    <div class="intro">
-      <div class="multimedia-element">
-<!-- TODO : Filtre qui récupère le tag multimedia et affiche l'élément -->
-        <c:if test="${not empty newsMultimediaTag}">
-          ${newsMultimediaTag.string}
-        </c:if>
-      </div>
-      <c:if test="${not empty newsIntroParagraph}">
-        ${newsIntroParagraph.string}
-      </c:if>
-    </div>
+    <c:if test="${not empty newsIntroParagraph}">
+      ${newsIntroParagraph.string}
+  	</c:if>
   </div>
 </div>
