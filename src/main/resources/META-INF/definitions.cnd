@@ -24,3 +24,10 @@
  + * (jnt:fileI18nReference, rfnnt:epRfnMultimediaElement, rfnnt:epRfnTextImage, rfnnt:epRfnLink)
  - categories (weakreference, choicelist[nodes='/sites/systemsite/categories/news//*;jnt:category']) multiple
 
+[rfnnt:epRfnTextImage] > jnt:content, jmix:editorialContent, rfnmix:epRfnPicture
+ - subtitle1 (string) internationalized
+ - subtitle2 (string) internationalized
+ - content (string, richtext) internationalized
+ - picturePosition (string, choicelist) internationalized indexed=no < 'positionLeft', 'positionRight'
+ - pictureSize (string, choicelist) internationalized indexed=no < 'smallSize', 'normalSize', 'bigSize'
+ 
